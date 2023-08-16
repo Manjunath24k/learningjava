@@ -1,3 +1,4 @@
+package com.main.august.pattern;
 class line1{
     public void Pattern(){
         System.out.print("*\n**\n***\n****\n");

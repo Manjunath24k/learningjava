@@ -1,3 +1,4 @@
+package com.main.august.pattern;
 import java.util.*;
 public class Pattern4 {
     public static void main(String args[]){
