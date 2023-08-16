@@ -2,15 +2,9 @@ package com.main.august.numtoword;
 
 public class NumToWord {
 
-    private static final String AND = "And";
-    private static final String HUNDRED = "Hundred";
-    private static final String THOUSAND = "Thousand";
-
-    private static final String SPACE = " ";
-
     private static final String WELCOME_TO_NUMBER_TO_WORD_CONVERTOR = "Welcome to Number to Word Convertor";
 
-    private String unitarray[] = { Words.ZERO, "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
+    private String unitarray[] = { Words.ZERO, Words.ONE, "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
             "Ten" };
 
     private String tenToNineteenArray[] = { "Ten", Words.ELEVEN, Words.TWELVE, Words.THIRTEEN, "Fourteen",
@@ -38,21 +32,21 @@ public class NumToWord {
             result = printTen(tensThousands);
             value = value - tensThousands * 10000;
             if (value == 0){
-                result = result + SPACE + THOUSAND;
+                result = result + Words.SPACE + Words.THOUSAND;
             }
         }
 
         if (value <= 9999 && value > 999) {
             int thousands = value / 1000;
             if (result != "") {
-                result = result + SPACE + printUnit(thousands) + SPACE + THOUSAND;
+                result = result + Words.SPACE + printUnit(thousands) + Words.SPACE + Words.THOUSAND;
             } else {
-                result = result + printUnit(thousands) + SPACE + THOUSAND;
+                result = result + printUnit(thousands) + Words.SPACE + Words.THOUSAND;
 
             }
             value = value - thousands * 1000;
             if (value == 0){
-                result = result + SPACE + THOUSAND;
+                result = result + Words.SPACE + Words.THOUSAND;
             }
         }
 
@@ -60,9 +54,9 @@ public class NumToWord {
             int hundreds = value / 100;
             hasHundred = true;
             if (result != "") {
-                result = result + SPACE + printUnit(hundreds) + SPACE + HUNDRED;
+                result = result + Words.SPACE + printUnit(hundreds) + Words.SPACE + Words.HUNDRED;
             } else {
-                result = result + printUnit(hundreds) + SPACE + HUNDRED;
+                result = result + printUnit(hundreds) + Words.SPACE + Words.HUNDRED;
             }
             value = value - hundreds * 100;
         }
@@ -76,8 +70,8 @@ public class NumToWord {
             } else {
                 if (result != "") {
                     if (hasHundred)
-                        result = result + SPACE + AND;
-                    result = result + SPACE + printTen(tens);
+                        result = result + Words.SPACE + Words.AND;
+                    result = result + Words.SPACE + printTen(tens);
                 } else {
                     result = result + printTen(tens);
                 }
@@ -90,7 +84,7 @@ public class NumToWord {
         if (value <= 9) {
             if (value != 0) {
                 if (result != "") {
-                    result = result + SPACE + printUnit(value);
+                    result = result + Words.SPACE + printUnit(value);
                 } else {
                     result = result + printUnit(value);
                 }
