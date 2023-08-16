@@ -18,7 +18,6 @@ public class NumToWordTest {
     @Ignore
     @Test
     public void testConvert_NotSupported() {
-        
         assertEquals("Not yet supported", numToWord.convert(10000));
         assertEquals("Not yet supported", numToWord.convert(100000));
         assertEquals("Not yet supported", numToWord.convert(1000000));
